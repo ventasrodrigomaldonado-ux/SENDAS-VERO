@@ -1,77 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Desarrollo SENDAS - en Preventa | Torrez & Maldonado</title>
+<title>SENDAS | Desarrollo con Amenidades</title>
 
-<meta property="og:title" content="Desarrollo en Preventa con Amenidades">
-<meta property="og:description" content="Departamentos en IXTAPA JAISCO con gran potencial de inversión">
-<meta property="og:image" content="portada.jpg">
-<meta property="og:type" content="website">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 margin:0;
 font-family:'Montserrat',sans-serif;
-background:#000;
-color:#fff;
-text-align:center;
+background:#0a0a0a;
+color:#eaeaea;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 30%, rgba(255,255,255,.03), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(255,255,255,.02), transparent 40%),
+linear-gradient(135deg, rgba(255,255,255,.015) 25%, transparent 25%),
+linear-gradient(225deg, rgba(255,255,255,.015) 25%, transparent 25%);
+background-size:300px 300px;
+z-index:-1;
 }
 
 header{
-padding:60px 20px;
+text-align:center;
+padding:90px 20px 75px;
 border-bottom:1px solid #c9a24a;
+position:relative;
 }
 
 .logo{
-width:180px;
+width:170px;
+max-width:80%;
 margin-bottom:20px;
 }
 
 .music-btn{
+position:absolute;
+top:20px;
+right:20px;
 background:#d4af37;
 color:#000;
 border:none;
-padding:12px 25px;
+padding:10px 18px;
 border-radius:25px;
-font-weight:600;
+font-size:13px;
 cursor:pointer;
-margin-top:15px;
+z-index:9999;
 }
 
 h1{
 font-family:'Playfair Display',serif;
-font-size:34px;
+font-size:42px;
 color:#d4af37;
+margin-top:15px;
 }
 
 .sub{
-color:#bbb;
+color:#aaa;
 letter-spacing:2px;
+text-transform:uppercase;
 }
 
-.hero img{
-width:100%;
-max-width:1000px;
-border-radius:10px;
+.hero-text{
+max-width:820px;
+margin:25px auto;
+color:#ccc;
+line-height:1.8;
+}
+
+.price{
+font-size:32px;
+color:#d4af37;
+margin:20px 0;
+font-weight:700;
+}
+
+.btn{
+background:#d4af37;
+color:#000;
+padding:15px 35px;
+border-radius:35px;
+text-decoration:none;
+font-weight:700;
+display:inline-block;
+margin-top:20px;
+text-align:center;
+transition:.3s;
+}
+
+.btn:hover{
+background:#fff;
+transform:translateY(-3px);
+}
+
+.btn-row{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:25px;
 }
 
 .section{
-padding:60px 20px;
-max-width:1000px;
+padding:70px 20px;
+max-width:1200px;
 margin:auto;
 }
 
 .section h2{
-color:#d4af37;
 font-family:'Playfair Display',serif;
-margin-bottom:30px;
+color:#d4af37;
+font-size:34px;
+}
+
+.divider{
+width:80px;
+height:2px;
+background:#d4af37;
+margin:15px 0 30px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:360px;
+object-fit:cover;
+border-radius:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 18px 45px rgba(0,0,0,.35);
+}
+
+.fachada-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:24px;
+}
+
+.fachada-grid img{
+width:100%;
+height:520px;
+object-fit:cover;
+border-radius:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 18px 45px rgba(0,0,0,.35);
+}
+
+.plano-img,
+.ubicacion-img{
+width:100%;
+border-radius:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 18px 45px rgba(0,0,0,.35);
+}
+
+.gallery img:hover,
+.fachada-grid img:hover,
+.plano-img:hover,
+.ubicacion-img:hover{
+transform:scale(1.02);
 }
 
 .features{
@@ -81,280 +191,239 @@ gap:20px;
 }
 
 .card{
-border:1px solid #c9a24a;
+background:#111;
 padding:25px;
-border-radius:10px;
-background:#0b0b0b;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
-
-.gallery img{
-width:100%;
-border-radius:8px;
-}
-
-.info-images{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.info-images img{
-width:100%;
-border-radius:10px;
-border:1px solid #c9a24a;
-}
-
-.buttons{
-margin-top:40px;
-}
-
-.btn{
-background:#d4af37;
-color:#000;
-padding:15px 28px;
-border-radius:30px;
-text-decoration:none;
+border-radius:14px;
+border:1px solid rgba(212,175,55,.25);
+text-align:center;
 font-weight:600;
-margin:10px;
-display:inline-block;
+line-height:1.6;
+}
+
+.invest{
+background:#111;
+padding:45px 25px;
+border-radius:16px;
+text-align:center;
+border:1px solid rgba(212,175,55,.25);
+}
+
+.invest p{
+line-height:1.8;
+max-width:900px;
+margin:20px auto;
+}
+
+.btn-center{
+text-align:center;
+padding:45px 20px;
+max-width:900px;
+margin:auto;
 }
 
 footer{
-padding:40px 20px;
+text-align:center;
+padding:45px 20px;
 border-top:1px solid #c9a24a;
-margin-top:60px;
 color:#aaa;
+line-height:1.7;
 }
 
+#modal{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+cursor:pointer;
+}
+
+#modalImg{
+max-width:95%;
+max-height:95%;
+border-radius:14px;
+}
+
+@media(max-width:768px){
+h1{
+font-size:34px;
+}
+
+.fachada-grid img,
+.gallery img{
+height:300px;
+}
+
+.music-btn{
+position:static;
+margin-top:20px;
+}
+}
 </style>
-
 </head>
-
-
 
 <body>
 
- 
-
 <header>
 
-<img src="logo.png" class="logo">
+<img src="logo.png" class="logo" alt="Sendas Logo">
 
 <button class="music-btn" onclick="activarMusica()">
-🎵 Activar Música
+🎧 Música
 </button>
 
-<h1>Desarrollo en Preventa</h1>
+<h1>SENDAS - Grupo Cúspide</h1>
 
-<p class="sub">TORREZ & MALDONADO</p>
+<p class="sub">Departamentos + Amenidades · En Preventa</p>
 
-<div style="margin-top:15px; font-size:14px; color:#bbb; line-height:1.8;">
-<strong>LIC. VERONICA TORREZ</strong><br>
+<p class="hero-text">
+Un desarrollo moderno y privado, diseñado con enfoque funcional para familias, inversionistas y quienes buscan adquirir su primera vivienda. Ofrece departamentos con amenidades, alberca, casa club, áreas verdes, seguridad 24/7 y ubicación cerca de CUCosta.
+</p>
 
-<a href="mailto:licenciadatorrez08@gmail.com" style="color:#d4af37; text-decoration:none;">
-LICENCIADATORREZ08@GMAIL.COM
-</a><br>
+<div class="price">Desde $1,653,133 MXN</div>
 
-<a href="https://wa.me/523221077202" style="color:#d4af37; text-decoration:none;">
-WHATSAPP +52 322 107 7202
+<a class="btn" href="https://wa.me/523221077202?text=Hola,%20quiero%20información%20sobre%20SENDAS%20y%20me%20gustaría%20agendar%20una%20visita" target="_blank">
+Agenda visita privada
 </a>
-
-</div>
 
 </header>
 
-<div class="section hero">
+<section class="section">
 
-<img src="principal.jpg">
+<h2>Fachada</h2>
+<div class="divider"></div>
 
-</div>
+<div class="fachada-grid">
 
-<div class="section">
+<img src="fachada1.jpg" onclick="abrirModal(this.src)" alt="Fachada Sendas 1">
 
-<h2>Características del Departamento</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>Departamentos:
-
-    DEPERTAMENTOS DE 2 RECAMARAS</h3>
-<p></p>
-</div>
-
-<div class="card">
-<h3>baños</h3>
-<p>1 Baño COMPLETO</p>
-</div>
-
-<div class="card">
-<p>Comercio TIPO MINI SUPER, DENTRO DEL DESARROLLO</p>
-</div>
-
-<div class="card">
-<h3>Estacionamiento</h3>
-
-<p>1 Cajón, 
-    seguridad 24/7
-365 dias del año</p>
-</div>
-
-<div class="card">
-<h3>Superficie</h3>
-<p>Departamentos de:
-
-    57 m² </p>
-</div>
-
-<div class="card">
-<h3>Amenidades </h3>
-
-
-<p>CASA CLUB, REGADERAS, AREA DE CAMASTROS, ASADORES, ALBERCA, CHAPOTEADERO, KIDS CLUB, PET CLUB, ANDADOR PARA CAMINATAS, AREAS VERDES</p>
-</div>
+<img src="fachada2.jpg" onclick="abrirModal(this.src)" alt="Fachada Sendas 2">
 
 </div>
 
-</div>
+</section>
 
-<div class="section">
-
-<h2>Amenidades del Desarrollo</h2>
-
-<div class="info-images">
-
-<img src="info1.jpg">
-<img src="info2.jpg">
-<img src="info3.jpg">
-<img src="info4.jpg">
-<img src="info5.jpg">
-<img src="info6.jpg">
-
-</div>
-
-</div>
-
-<div class="section">
+<section class="section">
 
 <h2>Galería</h2>
+<div class="divider"></div>
 
 <div class="gallery">
 
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
-<img src="foto4.jpg">
-<img src="foto5.jpg">
+<img src="foto1.jpg" onclick="abrirModal(this.src)" alt="Foto Sendas 1">
+<img src="foto2.jpg" onclick="abrirModal(this.src)" alt="Foto Sendas 2">
+<img src="foto3.jpg" onclick="abrirModal(this.src)" alt="Foto Sendas 3">
+<img src="foto4.jpg" onclick="abrirModal(this.src)" alt="Foto Sendas 4">
+<img src="foto5.jpg" onclick="abrirModal(this.src)" alt="Foto Sendas 5">
+<img src="foto6.jpg" onclick="abrirModal(this.src)" alt="Foto Sendas 6">
 
 </div>
 
-</div>
+<div style="margin-top:50px;">
 
-<div class="section">
+<h2 style="font-size:30px;">Plano de la Propiedad</h2>
+<div class="divider"></div>
 
-<h2>Planos de los Departamentos</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>Modelo A</h3>
-<img src="plano1.jpg" style="width:100%; border-radius:10px;">
-<p>2 recámaras | 73 m²</p>
-</div>
-
-<div class="card">
-<h3>Modelo B</h3>
-<img src="plano2.jpg" style="width:100%; border-radius:10px;">
-<p>2 recámaras | 78 m²</p>
-</div>
-
-<div class="card">
-<h3>Modelo C</h3>
-<img src="plano3.jpg" style="width:100%; border-radius:10px;">
-<p>3 recámaras | 95 m²</p>
-</div>
+<img src="plano.jpg" class="plano-img" onclick="abrirModal(this.src)" alt="Plano de la propiedad">
 
 </div>
 
-</div>
+</section>
 
-<div class="section">
+<section class="section invest">
 
-<h2>Avance del Proyecto</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>CREDITOS ACEPTADOS</h3>
-<p>INFONAVIT, FOVISSSTE, BANCARIOS</p>
-</div>
-
-<div class="card">
-<h3>Entrega estimada</h3>
-<p>ABRIL 2026</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Más Información</h2>
-
-<div class="buttons">
-
-<a class="btn" href="./ficha-tecnica.pdf" target="_blank">
-📄 Ver Ficha Técnica
-</a>
-
-<a class="btn" href="informacion-zona.pdf" target="_blank">
-🌎 Información de la Zona
-</a>
-
-<a class="btn" href="https://maps.app.goo.gl/rHpqAyb8QNezX4gx6" target="_blank">
-Ver Ubicación
-</a>
-
-<a class="btn" href="https://wa.me/523221077202?text=Hola%20me%20interesa%20recibir%20información%20del%20desarrollo%20en%20preventa" target="_blank">
-Contactar por WhatsApp
-</a>
-
-</div>
-
-</div>
-
-<footer>
+<h2>Potencial de Inversión</h2>
 
 <p>
-LIC. VERONICA TORREZ<br>
-Gestión y localización de propiedades comerciales y Viviendas<br>
-licenciadatorrez08@gmail.com<br>
-WhatsApp: +52 322 107 7202
+✔ Alto potencial por su cercanía al CUCosta<br>
+✔ Ubicación estratégica en zona de crecimiento de Puerto Vallarta<br>
+✔ Ideal como inversión para renta a estudiantes<br>
+💰 Recupera tu inversión generando ingresos mensuales
 </p>
 
+</section>
+
+<section class="section">
+
+<h2>Características</h2>
+<div class="divider"></div>
+
+<div class="features">
+
+<div class="card">2 Recámaras</div>
+<div class="card">1 Baño</div>
+<div class="card">Área de servicio</div>
+<div class="card">Cocina</div>
+<div class="card">Sala / Comedor</div>
+<div class="card">1 Estacionamiento</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Ubicación</h2>
+<div class="divider"></div>
+
+<img src="ubicacion.jpg" class="ubicacion-img" onclick="abrirModal(this.src)" alt="Ubicación Sendas">
+
+<div class="btn-row">
+
+<a class="btn" href="https://maps.app.goo.gl/NhoBDmpRLvfavh9V7" target="_blank">
+📍 Ver ubicación en Google Maps
+</a>
+
+<a class="btn" href="https://wa.me/523221077202?text=Hola,%20quiero%20información%20sobre%20SENDAS%20y%20me%20gustaría%20agendar%20una%20visita" target="_blank">
+Agenda visita privada
+</a>
+
+</div>
+
+</section>
+
+<section class="btn-center">
+
+<a class="btn" href="https://ventasrodrigomaldonado-ux.github.io/VERONICA-TORREZ-PERFIL/" target="_blank">
+Revisa Nuestro Catálogo
+</a>
+
+</section>
+
+<footer>
+Torrez & Maldonado <br>
+Lic. Veronica Torrez - Gestión y localización de propiedades comerciales y viviendas<br>
+licenciadatorrez08@gmail.com | +52 322 107 7202
 </footer>
+
+<div id="modal">
+<img id="modalImg" src="">
+</div>
 
 <audio id="musica" loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-
 function activarMusica(){
-
 let audio = document.getElementById("musica");
-
 audio.play();
-
 }
 
+function abrirModal(src){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalImg").src=src;
+}
+
+document.getElementById("modal").addEventListener("click",function(){
+this.style.display="none";
+document.getElementById("modalImg").src="";
+});
 </script>
 
 </body>
